@@ -14,33 +14,77 @@
     Table of contents
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    ::  Background
     ::  Split design
+    ::  Smaller resolution design
     ::  Hero
     ::  Content
 
 */
 
 /*  -------------------------------------------------------------
-    Split design
+    Background
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 body {
   background-image: url(/assets/img/old-books.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.app {
-  height: 100vh;
-  width: 100vw;
+/*  -------------------------------------------------------------
+    Split design
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 1024px) {
+  .app {
+    height: 100vh;
+    width: 100vw;
 
-  flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
 
-  > div {
-    width: 50vw;
+    > div {
+      width: 50vw;
+    }
+
+    #hero {
+      padding: 5em;
+
+      h1 {
+        margin-bottom: 10vh;
+      }
+    }
+
+    #content {
+      height: 100vh;
+
+      padding: 20vh 5vw;
+    }
+  }
+}
+
+/*  -------------------------------------------------------------
+    Smaller resolution design
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+@media screen and (max-width: 1023px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+
+    #hero {
+      padding: 5vh 1em;
+    }
+
+    #content {
+      padding: 5vh 2em;
+    }
   }
 }
 
@@ -49,13 +93,7 @@ body {
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 #hero {
-  padding: 5em;
-
   text-align: center;
-
-  h1 {
-    margin-bottom: 10vh;
-  }
 
   .subheader {
     color: hsla(12, 51%, 69%, 1);
@@ -69,9 +107,6 @@ body {
 
 #content {
   background-color: rgba(148, 67, 46, 1);
-  height: 100vh;
-
-  padding: 20vh 5vw;
 
   section {
     margin-bottom: 10vh;

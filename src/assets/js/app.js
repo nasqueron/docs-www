@@ -37,14 +37,42 @@ var animations = {
     Foundation.Motion.animateIn($("#hero"), 'slide-in-down slow');
   },
 
+  /**
+   * Gets reversed Flex direction.
+   *
+   * @param directionToToggle A valid flex-direction value
+   * @returns {*} The reversed Flex direction
+   */
+  toggleFlexDirection: function(directionToToggle) {
+    switch (directionToToggle) {
+      case '':
+      case 'row':
+        return 'row-reverse';
+
+      case 'row-reverse':
+        return 'row';
+
+      case 'column':
+        return 'column-reverse';
+
+      case 'column-reverse':
+        return 'column';
+
+      default:
+        console.log("Unknown Flex direction to toggle: " + directionToToggle);
+        return directionToToggle; // Stay as is
+    }
+  },
+
+  /**
+   * Reverses Flex direction for the specified grid element.
+   *
+   * @param selector The grid element
+   */
   reverseFlexDirection: function(selector) {
     var elem = $(selector);
     var currentDirection = elem.css("flex-direction");
-    if (currentDirection == "row-reverse") {
-      elem.css("flex-direction", "row");
-    } else {
-      elem.css("flex-direction", "row-reverse");
-    }
+    elem.css("flex-direction", this.toggleFlexDirection(currentDirection));
   }
 }
 
