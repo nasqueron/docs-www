@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/*  -------------------------------------------------------------
+    Nasqueron documentations web site
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Project:        Nasqueron
+    Author:         Sébastien Santoro aka Dereckson
+    Dependencies:   Foundation
+    Filename:       app.css
+    Licence:        CC-BY 4.0, MIT, BSD-2-Clause (multi-licensing)
+    -------------------------------------------------------------    */
+
+/*  -------------------------------------------------------------
+    Table of contents
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ::  Split design
+    ::  Hero
+    ::  Content
+
+*/
+
+/*  -------------------------------------------------------------
+    Split design
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+body {
+  background-image: url(/assets/img/old-books.jpg);
+  background-size: cover;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: row;
+
+  > div {
+    width: 50vw;
+  }
+}
+
+/*  -------------------------------------------------------------
+    Hero
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+#hero {
+  padding: 5em;
+
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10vh;
+  }
+
+  .subheader {
+    color: hsla(12, 51%, 69%, 1);
+    text-shadow: 3px 3px 10px #0a0200;
+  }
+}
+
+/*  -------------------------------------------------------------
+    Content
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+#content {
+  background-color: rgba(148, 67, 46, 1);
+  height: 100vh;
+
+  padding: 20vh 5vw;
+
+  section {
+    margin-bottom: 10vh;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+}
