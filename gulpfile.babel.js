@@ -88,7 +88,9 @@ function sass() {
       browsers: COMPATIBILITY
     }))
     // Comment in the pipe below to run UnCSS in production
-    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    // .pipe($.if(PRODUCTION, $.postcss([
+    //   $.uncss.postcssPlugin(UNCSS_OPTIONS)
+    // ])))
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
@@ -96,19 +98,23 @@ function sass() {
 }
 
 let webpackConfig = {
+  mode: (PRODUCTION ? 'production' : 'development'),
   module: {
     rules: [
       {
-        test: /.js$/,
-        use: [
-          {
-            loader: 'babel-loader'
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"],
+            compact: false
           }
-        ]
+        }
       }
     ]
   }
 }
+
 // Combine JavaScript into one file
 // In production, the file is minified
 function javascript() {
