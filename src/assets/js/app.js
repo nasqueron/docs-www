@@ -33,8 +33,8 @@ var animations = {
    * Animates the elements to make a dramatic entrance.
    */
   enter: function() {
-    Foundation.Motion.animateIn($("#content"), 'slide-in-up slow');
-    Foundation.Motion.animateIn($("#hero"), 'slide-in-down slow');
+    Foundation.Motion.animateIn($("#content"), 'slide-in-up slow', null);
+    Foundation.Motion.animateIn($("#hero"), 'slide-in-down slow',null);
   },
 
   /**
