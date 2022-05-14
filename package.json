@@ -29,9 +29,9 @@
     "gulp-concat": "^2.5.2",
     "gulp-extname": "^0.2.0",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^5.0.0",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^3.0.1",
     "gulp-postcss": "^8.0.0",
@@ -42,7 +42,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.20.2",
     "webpack-stream": "^5.1.1",
-    "yargs": "^3.8.0"
+    "yargs": "^13.2.4"
   },
   "repository": {
     "type": "git",
