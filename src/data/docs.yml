@@ -1,3 +1,4 @@
 Docker registry API: /docker-registry-api/
 Limiting Factor: /limiting-factor/rust/limiting_factor
 salt-wrapper: /salt-wrapper
+secretsmith: /secretsmith
